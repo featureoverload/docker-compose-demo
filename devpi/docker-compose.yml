@@ -1,0 +1,13 @@
+services:
+  devpi-server:
+    image: huaxlin/devpi:latest
+    ports:
+      - 3141:3141
+    volumes:
+      - $PWD/.root_password:/devpi/.root_password
+      - /mnt/pydevops/devpi_data:/devpi
+        #environment:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
